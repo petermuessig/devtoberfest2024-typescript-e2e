@@ -1,0 +1,76 @@
+<mvc:View
+	controllerName="devtoberfest.app.controller.Main"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:dtlib="devtoberfest.lib"
+	core:require="{
+		formatter: 'devtoberfest/app/model/formatter'
+	}">
+
+	<Page
+		title="{i18n>appTitle} (User: {= ${user>/me/id} || 'anonymous'})"
+		id="page">
+		<content>
+
+			<Table id="booksTable" items='{
+					path: "/Books",
+					sorter: {
+							"path": "title",
+							"ascending": "true"
+					}
+			}'>
+					<columns>
+							<Column>
+								<HBox>
+										<Text text="Book" />
+										<core:Icon src="sap-icon://sort-ascending" class="sapUiSmallMarginBegin" press=".onBooksSort" />
+								</HBox>
+							</Column>
+							<Column>
+									<Text text="Author" />
+							</Column>
+							<Column>
+									<Text text="Genre" />
+							</Column>
+							<Column>
+									<Text text="Price" />
+							</Column>
+							<Column>
+									<Text text="Stock" />
+							</Column>
+					</columns>
+					<items>
+							<ColumnListItem vAlign="Middle" type="Active" press=".onBookSelect">
+									<cells>
+											<ObjectIdentifier title="{title}" />
+											<Text text="{author}" />
+											<Text text="{genre/name}" />
+											<ObjectNumber number="{price}" unit="{currency_code}" />
+											<ObjectStatus text="{stock}" state="{=
+													${stock} >= 20 ? 'Success' : ${stock} > 0 ? 'Warning' : 'Error'
+											}" />
+									</cells>
+							</ColumnListItem>
+					</items>
+			</Table>
+
+			<Panel id="bookDetails" headerText="Details" visible="false" class="sapUiSmallMarginTop" >
+					<VBox>
+							<Label text="Title" />
+							<Text text="{title}" />
+							<Label text="Description" class="sapUiSmallMarginTop" />
+							<Text text="{descr}" />
+							<Button text="Order" press=".onBookOrder" class="sapUiSmallMarginTop"  />
+					</VBox>
+			</Panel>
+
+			<dtlib:Chart title="Stock" items="{/Books}">
+					<dtlib:ChartItem text="{title}" value="{stock}"></dtlib:ChartItem>
+			</dtlib:Chart>
+
+		</content>
+	</Page>
+
+</mvc:View>

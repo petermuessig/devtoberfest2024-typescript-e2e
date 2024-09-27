@@ -1,0 +1,38 @@
+{
+  "generator-ui5-ts-library": {
+    "namespace": "devtoberfest.lib",
+    "framework": "OpenUI5",
+    "frameworkVersion": "1.128.0",
+    "flat": true,
+    "author": "Peter Muessig",
+    "initrepo": false,
+    "tstypes": "@openui5/types",
+    "tstypesVersion": "1.128.0",
+    "metadataOptionsImportLine": "import type { MetadataOptions } from \"sap/ui/core/Element\";\n",
+    "metadataOptionsType": "MetadataOptions",
+    "libId": "devtoberfest.lib",
+    "libURI": "devtoberfest/lib",
+    "libURIFlat": "",
+    "libBasePath": "../..",
+    "cdnDomain": "sdk.openui5.org",
+    "defaultTheme": "sap_horizon",
+    "availableThemes": {
+      "sap_horizon": [
+        "sap_horizon",
+        "sap_horizon_dark",
+        "sap_horizon_hcw",
+        "sap_horizon_hcb"
+      ],
+      "sap_fiori_3": [
+        "sap_fiori_3",
+        "sap_fiori_3_dark",
+        "sap_fiori_3_hcw",
+        "sap_fiori_3_hcb"
+      ]
+    },
+    "gte1_100_0": true,
+    "gte1_119_0": true,
+    "gte2_0_0": false,
+    "setupCompleted": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+	"name": "devtoberfest.lib",
+	"version": "1.0.0",
+	"description": "UI5 Library: devtoberfest.lib",
+	"author": "Peter Muessig",
+	"license": "Apache-2.0",
+	"types": "dist/index.d.ts",
+	"files": [
+		".eslintrc.js",
+		"LICENCE",
+		"README.md",
+		"tsconfig.json",
+		"ui5.yaml",
+		"dist/**/*.d.ts",
+		"dist/**/*.d.ts.map",
+		"src",
+		"test"
+	],
+	"scripts": {
+		"clean": "rimraf dist coverage",
+		"build": "ui5 build --clean-dest",
+		"build:ts-interfaces": "npx @ui5/ts-interface-generator",
+		"start": "ui5 serve -o test-resources/devtoberfest/lib/Chart.html",
+		"start:dist": "npm start -- --config ui5-dist.yaml",
+		"testsuite": "ui5 serve -o test-resources/devtoberfest/lib/qunit/testsuite.qunit.html",
+		"ts-typecheck": "tsc --noEmit",
+		"lint": "eslint src test",
+		"karma": "karma start",
+		"karma-ci": "karma start karma-ci.conf.js",
+		"karma-ci-cov": "karma start karma-ci-cov.conf.js",
+		"test": "npm run lint && npm run karma-ci-cov"
+	},
+	"devDependencies": {
+		"@openui5/types": "1.128.0",
+		"@types/chart.js": "^2.9.41",
+		"@ui5/cli": "^4.0.6",
+		"@ui5/ts-interface-generator": "^0.8.3",
+		"eslint": "^9.9.1",
+		"globals": "^15.9.0",
+		"karma": "^6.4.4",
+		"karma-chrome-launcher": "^3.2.0",
+		"karma-coverage": "^2.2.1",
+		"karma-ui5": "^4.0.1",
+		"karma-ui5-transpile": "^3.4.8",
+		"rimraf": "^6.0.1",
+		"typescript": "^5.5.4",
+		"typescript-eslint": "^8.3.0",
+		"ui5-middleware-livereload": "^3.0.3",
+		"ui5-tooling-modules": "^3.13.0",
+		"ui5-tooling-transpile": "^3.4.8"
+	},
+	"dependencies": {
+		"chart.js": "^4.4.4"
+	}
+}
