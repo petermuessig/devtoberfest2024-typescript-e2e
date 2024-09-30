@@ -2,6 +2,8 @@
 
 This repository is a step-by-step guide explaining how to build a UI5 freestyle bookshop application on top of the booskop CAP server from the [Cloud CAP Samples](https://github.com/SAP-samples/cloud-cap-samples) project.
 
+The recorded session with a live-walkthrough can be found on YouTube: [🟠 UI5 Freestyle: TypeScript E2E Development - from zero to hero in 1hr!](https://www.youtube.com/watch?v=7aAehB4ejHQ).
+
 ## Preparation
 
 Make sure to have a current supported version of [Node.js](https://nodejs.org/) installed, and a modern JavaScript IDE such as [VSCode](https://code.visualstudio.com/) or use a hosted IDE such as [SAP Business Application Studio](https://www.sap.com/products/technology-platform/business-application-studio.html).
