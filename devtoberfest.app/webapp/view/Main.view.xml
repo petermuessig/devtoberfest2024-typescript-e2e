@@ -2,6 +2,7 @@
 	controllerName="devtoberfest.app.controller.Main"
 	displayBlock="true"
 	xmlns="sap.m"
+	xmlns:f="sap.f"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns:dtlib="devtoberfest.lib"
@@ -9,9 +10,16 @@
 		formatter: 'devtoberfest/app/model/formatter'
 	}">
 
-	<Page
-		title="{i18n>appTitle} (User: {= ${user>/me/id} || 'anonymous'})"
-		id="page">
+	<Page id="page">
+		<customHeader>
+			<f:ShellBar title="{i18n>appTitle} (User: {= ${user>/me/id} || 'anonymous'})"
+				homeIcon="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg.adapt.svg/1493030643828.svg"
+				showcopilot="true" showProductSwitcher="true">
+				<f:profile>
+					<f:Avatar id="avatar-profile" tooltip="{= ${user>/me/id} || 'anonymous'}" />
+				</f:profile>
+			</f:ShellBar>
+		</customHeader>
 		<content>
 
 			<Table id="booksTable" items='{

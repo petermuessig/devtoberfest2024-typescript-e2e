@@ -9,5 +9,10 @@ export default {
 		const oModel = new JSONModel(Device);
 		oModel.setDefaultBindingMode(BindingMode.OneWay);
 		return oModel;
+	},
+	createDataModel: () => {
+		const oModel = new JSONModel();
+		void oModel.loadData("data.json", {}, false);
+		return oModel;
 	}
 };

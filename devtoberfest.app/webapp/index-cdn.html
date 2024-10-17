@@ -9,11 +9,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>UI5 Application: devtoberfest.app</title>
 
+		<!--
+		  - OpenUI5 1.x: https://sdk.openui5.org/1.128.0/resources/sap-ui-core.js
+		  - OpenUI5 2.x: https://sdk.openui5.org/nightly/2/resources/sap-ui-core.js
+		-->
 		<script
 			id="sap-ui-bootstrap"
 			src="https://sdk.openui5.org/1.128.0/resources/sap-ui-core.js"
 			data-sap-ui-resourceroots='{
-				"devtoberfest.app": "./"
+				"devtoberfest.app": "./",
+				"devtoberfest.lib": "./resources/devtoberfest/lib/"
 			}'
 			data-sap-ui-theme="sap_horizon"
 			data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
@@ -23,6 +28,15 @@
 			data-sap-ui-xx-waitForTheme="true"
 			data-sap-ui-xx-supportedLanguages="en,de"
 		></script>
+		<script>
+			sap.ui.loader.config({
+				paths: {
+					"devtoberfest.app": "./",
+					"devtoberfest.lib": "./resources/devtoberfest/lib/",
+					"chart.js": "./resources/chart.js/"
+				}
+			})
+		</script>
 	</head>
 
 	<body class="sapUiBody">
